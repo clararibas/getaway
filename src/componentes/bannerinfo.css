@@ -1,0 +1,25 @@
+div.bannerinfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+}
+
+div.direita img.img_cel {
+    width: 500px;
+}
+
+div.esquerda h2 {
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #696969;
+}
+
+div.esquerda p {
+    color: #696969;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}

@@ -25,44 +25,50 @@
     padding: 10px;
 }
 
-form h1 {
+div.editarPerfil h1 {
     font-weight: normal;
 }
 
-form {
+div.editarPerfil {
     margin-top: 20px;
     width: 100%;
-    height: 360px;
+    height: fit-content;
 }
 
-form .input-block {
+div .input-block {
     margin-top: 20px;
 }
 
-form .input-block label {
+div.editarPerfil div.input-block label {
     color: #E5E5E5;
     font-size: 14px;
     font-weight: normal;
     display: block;
 }
 
-form .input-block input {
+div.editarPerfil div.input-block input {
     width: 80%;
     height: 45px;
     font-size: 14px;
     color: #333;
-    padding: 10px;
+    padding: 5px;
     border-radius: 50px;
     border: 1px solid #EEE;
 }
 
-form input[type=text]:focus, input[type=password]:focus {
+div.editarPerfil div.input-block a {
+    display: block;
+    margin: auto;
+}
+
+
+div.editarPerfil input[type=text]:focus, input[type=password]:focus {
     border: 1px solid #FF6B01;
   }
 
-form button[type=submit] {
+div.editarPerfil button.salvar {
     border: 0;
-    margin-top: 10px;
+    margin-top: 5px;
     background: #FF6B01;
     border-radius: 50px;
     padding: 15px 20px;
@@ -71,22 +77,26 @@ form button[type=submit] {
     color: #FFF;
     cursor: pointer;
     transition: background 0.5s;
-    margin-bottom: 20px;
-    width: 50%;
+    margin-bottom: 5px;
+    width: 55%;
 }
 
-form button[type=submit]:hover {
-    opacity: 0.8;
-}
-
-p {
-    margin-top: 20px;
-    color: #000000;
-    font-size: 16px;
-}
-
-p a {
+div.editarPerfil a.excluir {
     text-decoration: none;
+    border: 0;
+    background: #FFF;
+    border: 1px solid #FF6B01;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
     color: #FF6B01;
-    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.5s;
+    margin-bottom: 20px;  
+    width: 55%; 
+}
+
+div.editarPerfil button:hover {
+    opacity: 0.8;
 }

@@ -1,33 +1,55 @@
 import React, { useState } from 'react';
 import './cadastro.css';
-import api from '../services/api';
+//import api from '../services/api';
+import {useAuth} from '../hooks/Auth';
+import { useHistory } from "react-router-dom";
+
 
 function Cadastro() {
+    
+    const { signUp } = useAuth();
+    const history = useHistory();
+
+    // Função de mudar página  
+    const routeChange = () =>{  
+        let path = '/projetos'; 
+        history.push(path);
+    }
 
     const [email, setEmail] = useState ('');
     const [senha, setSenha] = useState ('');
     const [csenha, setCsenha] = useState ('');
 
-    async function handleCadastro (e) {
+     // Função de enviar os dados  
+     async function handleCadastro (e)  {
         e.preventDefault();
-        const response = await api.post( 
-            //'url do local host',
-            {
-                email,
-                senha,
-                csenha
-            })
-        setEmail('');
-        setSenha('');
-        setCsenha('');
-    }
+        if( senha  ===  csenha ){
+        
+                try{
+                    signUp({
+                        email: email, 
+                        password: senha,
+                    });
+                    console.log("CADASTROU! REDIRECIONANDO PARA LOGIN");
+                    history.push('/entrar');
+                }catch(error){
+                    console.log(error);
+                };
 
+                setEmail('');
+                setSenha('');
+                setCsenha('');
+        }
+        else {
+            window.alert("As senhas são diferentes")
+        }
+}
     return (
 
         <div className="container">
         <div className="card">
 
-            <form onSubmit={handleCadastro}>
+            <form onSubmit= {handleCadastro}>
 
             <h1>Cadastre-se no GetaWay</h1>
         
@@ -68,10 +90,10 @@ function Cadastro() {
             </div>
 
             <p>
-                Já é cadastrado? <a href="#entrar">Iniciar sessão</a>
+                Já é cadastrado? <a href="/entrar">Iniciar sessão</a>
             </p>
 
-            <button type="submit">Cadastrar</button>
+            <button type="submit" onSubmit={routeChange} >Cadastrar</button>
 
             </form>
         </div>

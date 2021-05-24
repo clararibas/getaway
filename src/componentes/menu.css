@@ -8,7 +8,16 @@
 
   .header a {
     float: left;
-    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+  }
+  
+  .header button {
+    float: left;
     text-align: center;
     padding: 12px;
     text-decoration: none;
@@ -28,21 +37,29 @@
     float: right;
   }
 
-  a.entrar {
+  a.editarperfil {
     color: #FF6B01;
     border: 1px solid #FF6B01;
     box-sizing: border-box;
     border-radius: 50px;
   }
 
-  a.cadastrar {
+  button.sair{
     color: #FFF;
     background: #FF6B01;
     border-radius: 50px;
     margin-left: 15px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button.sair:hover {
+      opacity: 0.8;
   }
 
   .img_logo {
       float: left;
       width: 45px;
   }
+

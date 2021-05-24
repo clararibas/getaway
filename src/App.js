@@ -1,15 +1,17 @@
 import React from 'react';
-import Header from './componentes/Header.js';
-import Cadastro from './componentes/Cadastro.js';
+import Routes from './routes/index';
+import {AuthProvider} from './hooks/Auth';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import './App.css';
 
 function App() {
   return (
-    <>
-    <Header/>
-    <Cadastro/>
-    <h1>Hello World</h1>
-    </>
+    <AuthProvider>
+      <Router>
+        <Routes/>
+      </Router>
+    </AuthProvider>
   );
 }
 
